@@ -7,4 +7,3 @@
 # 成员
 
 * [pwcong](https://github.com/pwcong)
-* [dakeng](https://github.com/dakeng)
