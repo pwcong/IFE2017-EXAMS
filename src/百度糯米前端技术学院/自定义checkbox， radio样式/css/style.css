@@ -1,0 +1,41 @@
+.my-radio{
+    display: inline-block;
+    position: relative;
+}
+
+.my-radio div{
+    margin: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../image/radio.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-radio input:checked + div{
+    background-image: url(../image/radio_checked.png);
+}
+
+.my-checkbox{
+    display: inline-block;
+    position: relative;
+}
+
+.my-checkbox div{
+    margin: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../image/checkbox.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-checkbox input:checked + div{
+    background-image: url(../image/checkbox_checked.png);
+}
+
+.hidden{
+    visibility: hidden;
+    position: absolute;
+    z-index: -999;
+}
