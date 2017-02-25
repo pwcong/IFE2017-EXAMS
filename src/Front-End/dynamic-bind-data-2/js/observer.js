@@ -1,6 +1,7 @@
 function Observer(data) {
     this.data = data;
     this.walk(data);
+    this.watch = {};
 }
 
 Observer.prototype.walk = function (obj) {
@@ -20,17 +21,23 @@ Observer.prototype.walk = function (obj) {
 };
 
 Observer.prototype.convert = function (key, val) {
+
+    let ctx = this;
+
     Object.defineProperty(this.data, key, {
         enumerable: true,
         configurable: true,
         get: function () {
-            console.log('你访问了', key);
             return val;
         },
         set: function (newVal) {
-            console.log('你设置了', key, '，新的值为', newVal);
             if (newVal === val) return;
+            ctx.watch[key] && ctx.watch[key](newVal);
             val = newVal;
         }
     })
 };
+
+Observer.prototype.$watch = function(key,cb){
+    this.watch[key] = cb;
+}
