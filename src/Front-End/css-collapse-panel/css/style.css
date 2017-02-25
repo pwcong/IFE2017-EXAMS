@@ -1,0 +1,75 @@
+body{
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.container{
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.collapse-item{
+    position: relative;
+}
+
+.collapse-item input{
+    position: absolute;
+    visibility: hidden;
+}
+
+.collapse-item-title{
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+    background-color: #4b4b4b;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapse-item-title i{
+    transform: rotate(0deg);
+    transition: transform 0.4s;
+}
+
+.collapse-item-list{
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s;
+}
+
+.collapse-item input:checked + .collapse-item-title i{
+    transform: rotate(-90deg);
+}
+
+.collapse-item input:checked + .collapse-item-title + .collapse-item-list{
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+.collapse-item-list div{
+    background-color: #4daf7c;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.4s;
+
+}
+
+.collapse-item-list div:hover{
+    background-color: #2ED07D;
+}
