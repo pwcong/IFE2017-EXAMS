@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>动态数据绑定（一）</title>
+        <link rel="stylesheet" href="../../../public/css/normalize.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/observer.js"></script>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div id="console-panel">
+                <div id="panel">
+                    <p>试着输入以下内容：</p>
+                    <ul>
+                        <li>app1.data.name</li>
+                        <li>app1.data.age = 18</li>
+                        <li>app2.data.university</li>
+                        <li>app2.data.major = 'live'</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="console-input">
+                <input type="text" id="input">
+                <button id="button">></button>
+            </div>
+
+        </div>
+        
+        <script src="./js/main.js"></script>
+
+    </body>
+
+</html>
