@@ -34,7 +34,7 @@
     border-radius: 50%;
     clip: rect(0, 60px, 120px, 0);
     box-shadow: 0 0 0 3px dodgerblue inset;
-    animation: anim-rotate-circle 1s linear infinite;
+    animation: anim-rotate-circle-outer 1s linear infinite;
 }
 
 .circle-outer .right{
@@ -46,11 +46,11 @@
     border-radius: 50%;
     clip: rect(60px, 120px, 120px, 60px);
     box-shadow: 0 0 0 3px dodgerblue inset;
-    animation: anim-rotate-circle 1s linear infinite;
+    animation: anim-rotate-circle-outer 1s linear infinite;
 }
 
 
-@keyframes anim-rotate-circle{
+@keyframes anim-rotate-circle-outer{
 
     0% {
         transform: rotate(0deg);
@@ -75,7 +75,7 @@
     height: 70px;
     width: 70px;
     border-radius: 50%;  
-    background-color: #7ebfff;
+    background-color: #59ACFF;
     overflow:hidden;
 }
 
@@ -103,8 +103,7 @@
     height: 100%; width: 100%;
     border-radius: 999px;
     background-color: dodgerblue;
-    opacity: 0.8;
-    animation: ui-spinner-rotate-left 2s infinite;
+    animation: anim-rotate-circle-inner-left 2s infinite;
     transform-origin: 0 50% 0;
 }
 
@@ -122,12 +121,12 @@
     border-top-right-radius: 0;
     left: -100%;
     transform-origin: 100% 50% 0;
-    animation-name: ui-spinner-rotate-right;
+    animation-name: anim-rotate-circle-inner-right;
     animation-delay: 1s;
 }
 
 
-@keyframes ui-spinner-rotate-right{
+@keyframes anim-rotate-circle-inner-right{
   0%{transform:rotate(0deg)}
   25%{transform:rotate(180deg)}
   50%{transform:rotate(180deg)}
@@ -135,7 +134,7 @@
   100%{transform:rotate(360deg)}
 }
 
-@keyframes ui-spinner-rotate-left{
+@keyframes anim-rotate-circle-inner-left{
   0%{transform:rotate(0deg)}
   25%{transform:rotate(0deg)}
   50%{transform:rotate(180deg)}
