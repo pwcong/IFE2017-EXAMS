@@ -76,22 +76,6 @@
         }
     },
     {
-        "name": "For フルーツバスケット",
-        "mp3Url": "http://m10.music.126.net/20170306174143/4063a7210b952f51e0d833721da331d4/ymusic/85d8/7db2/0ae8/f31e10384dfe5de059c7a8bec29cdc17.mp3",
-        "duration": 262766,
-        "artists": [
-            {
-                "name": "岡崎律子",
-                "id": 161420
-            }
-        ],
-        "album": {
-            "name": "フルーツバスケット~四季~",
-            "id": 60528,
-            "picUrl": "http://p3.music.126.net/Tv-46V1YZ44RKZ_LF8xZmw==/628920651099574.jpg"
-        }
-    },
-    {
         "name": "夢灯籠",
         "mp3Url": "http://m2.music.126.net/h5sli9SrGADPLn-JSMyfIg==/3420580731402332.mp3",
         "duration": 131666,

@@ -83,14 +83,18 @@ class App extends React.Component{
     handleNextMusic(){
         this.props.dispatch(nextMusic());
         this.setState({
-            isPlaying: true
+            isPlaying: true,
+            progressBarMaskWidth: '0px',
+            currentProgress: 0
         });
     }
 
     handlePreviousMusic(){
         this.props.dispatch(previousMusic());
         this.setState({
-            isPlaying: true
+            isPlaying: true,
+            progressBarMaskWidth: '0px',
+            currentProgress: 0
         });
     }
 
