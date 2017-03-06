@@ -110,7 +110,8 @@ class App extends React.Component{
     handleMusicReady(e){
         this.setState({
             currentProgress: 0,
-            maxProgress: e.target.duration
+            maxProgress: e.target.duration,
+            progressBarMaskWidth: '0px'
         });
     }
 
