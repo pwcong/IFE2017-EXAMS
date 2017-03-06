@@ -21,3 +21,13 @@ export function previousMusic(){
         type: ACTION_PLAYLIST_PREVIOUS_MUSIC
     });
 }
+
+export const ACTION_PLAYLIST_SELECT_MUSIC = 'ACTION_PLAYLIST_SELECT_MUSIC';
+export function selectMusic(count){
+    return ({
+        type: ACTION_PLAYLIST_SELECT_MUSIC,
+        payload: {
+            count
+        }
+    });
+}

@@ -61,12 +61,47 @@
 }
 
 :local .song-list{
+    box-sizing: border-box;
+    height: 300px;
+    overflow: auto;
     margin-top: 8px;
     width: 100%;
-    height: 120px;
+    padding: 8px;
     background-color: #333;
     box-shadow: 0 0 10px 0px;
+    visibility: hidden;
+    opacity: 0;
 
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+:local .active{
+    opacity: 1;
+    visibility: visible;
+}
+
+:local .song-list::-webkit-scrollbar{
+    width: 8px;
+    height: 16px;
+    background-color: #1e1e1e;
+}
+
+:local .song-list::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background-color: #1e1e1e;
+}
+
+:local .song-list::-webkit-scrollbar-thumb{
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(170, 170, 170, 0.5);
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+:local .song-list::-webkit-scrollbar-thumb:hover{
+    background-color: #aaa;
 }
 
 .rotate{

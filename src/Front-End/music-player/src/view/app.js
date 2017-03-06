@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 import { 
     getPlayList,
     nextMusic,
-    previousMusic
+    previousMusic,
+    selectMusic
 } from '../actions/playlist';
+
+import MusicItem from '../component/MusicItem';
 
 import list from '../../playlist.json';
 
@@ -22,7 +25,8 @@ class App extends React.Component{
             progressBarMaskWidth: '0px',
             currentVolume: 0,
             maxVolume: 100,
-            volumeBarMaskWidth: '0px'
+            volumeBarMaskWidth: '0px',
+            showList: false
         };
 
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
@@ -32,6 +36,8 @@ class App extends React.Component{
         this.handlePreviousMusic = this.handlePreviousMusic.bind(this);
         this.handleTogglePlay = this.handleTogglePlay.bind(this);
         this.handleMusicReady = this.handleMusicReady.bind(this);
+        this.handleSelectMusic = this.handleSelectMusic.bind(this);
+        this.handleToggleShowList = this.handleToggleShowList.bind(this);
     }
 
     handleChangeProgress(e){
@@ -80,8 +86,23 @@ class App extends React.Component{
         this.refs.musicPlayer.muted = !this.state.isMute;
     }
 
+    handleToggleShowList(){
+        this.setState({
+            showList: !this.state.showList
+        });
+    }
+
     handleNextMusic(){
         this.props.dispatch(nextMusic());
+        this.setState({
+            isPlaying: true,
+            progressBarMaskWidth: '0px',
+            currentProgress: 0
+        });
+    }
+
+    handleSelectMusic(count){
+        this.props.dispatch(selectMusic(count));
         this.setState({
             isPlaying: true,
             progressBarMaskWidth: '0px',
@@ -182,7 +203,7 @@ class App extends React.Component{
                             {playlist.list[playlist.current] ? playlist.list[playlist.current].name : ''}
                         </div>
                         <div className={style.artist}>
-                            {playlist.list[playlist.current] ? playlist.list[playlist.current].artists.map(artist=>{return artist.name}).join(' / ') : ''}
+                            {playlist.list[playlist.current] ? playlist.list[playlist.current].artists.map(artist=> artist.name).join(' / ') : ''}
                         </div>
                         <div className={style['progress-main']}>
                             <div className={style['progress-bar']} ref="progressBar">
@@ -206,7 +227,11 @@ class App extends React.Component{
                                 <span className="fa fa-step-forward" onClick={this.handleNextMusic}></span>
                             </div>
                             <div className={style.right}>
-                                <span className="fa fa-list-ul"></span>
+                                <span 
+                                    className="fa fa-list-ul"
+                                    onClick={this.handleToggleShowList}
+                                    >
+                                </span>
                                 <span 
                                     className={'fa ' + (this.state.isMute ? 'fa-volume-off' : 'fa-volume-up')}
                                     onClick={this.handleToggelMute}>
@@ -226,7 +251,22 @@ class App extends React.Component{
                         </div>
                     </div>
                 </div>
-                {/*<div className={style['song-list']}></div>*/}
+                <div className={style['song-list'] + ' ' + (this.state.showList ? style.active : '')}>
+                    {
+                        playlist.list.map((item, index) => {
+                            return (
+                                <MusicItem 
+                                    onItemClick={this.handleSelectMusic}
+                                    active={playlist.current === index}
+                                    key={index}
+                                    count={index}
+                                    title={item.name}
+                                    artist={item.artists.map(artist => artist.name).join(' / ')}
+                                    duration={formatTime(item.duration/1000)}/>
+                            )
+                        })
+                    }
+                </div>
             </div>
 
         );

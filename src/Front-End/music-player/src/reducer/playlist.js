@@ -1,7 +1,8 @@
 import {
     ACTION_PLAYLIST_GET,
     ACTION_PLAYLIST_NEXT_MUSIC,
-    ACTION_PLAYLIST_PREVIOUS_MUSIC
+    ACTION_PLAYLIST_PREVIOUS_MUSIC,
+    ACTION_PLAYLIST_SELECT_MUSIC
 } from '../actions/playlist';
 
 
@@ -44,7 +45,10 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 current: (state.current + state.list.length -1 ) % state.list.length
             });
-
+        case ACTION_PLAYLIST_SELECT_MUSIC:
+            return Object.assign({}, state, {
+                current: action.payload.count
+            });
         default:
             return state;
 
