@@ -188,7 +188,7 @@
 }
 
 :local .console-tools .left{
-    flex: 2;
+    flex: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -222,9 +222,12 @@
 }
 
 :local .console-tools .right span{
-    margin: 4px;
+    padding: 8px;
+    width: 18px;
+    height: 18px;
     color: white;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
 :local .console-tools .right span:hover{
