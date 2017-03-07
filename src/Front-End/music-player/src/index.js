@@ -9,6 +9,9 @@ import reducer from './reducer';
 
 import App from './view/app';
 
+/**
+ * 初始化store，用于状态管理
+ */
 const store = createStore(
 	reducer, 
 	applyMiddleware(thunkMiddleware)

@@ -10,6 +10,7 @@ import {
 
 import MusicItem from '../component/MusicItem';
 
+// 导入音乐列表
 import list from '../../playlist.json';
 
 class App extends React.Component{
@@ -29,6 +30,7 @@ class App extends React.Component{
             showList: false
         };
 
+        // 为下面方法绑定this
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
         this.handleChangeVolume = this.handleChangeVolume.bind(this);
         this.handleToggelMute = this.handleToggelMute.bind(this);
@@ -42,6 +44,7 @@ class App extends React.Component{
 
     handleChangeProgress(e){
 
+        // 通过当前音乐时间和音乐时长来计算得出音乐进度条长度
         let progressBarMaskWidth = e.target.value / this.state.maxProgress * (this.refs.progressBar.offsetWidth - 20);
 
         this.setState({
@@ -65,6 +68,7 @@ class App extends React.Component{
             });
         }else{
 
+            // 通过音量值和最大音量值计算的音量滑动条长度
             let volumeBarMaskWidth = volume / this.state.maxVolume * (this.refs.volumeBar.offsetWidth - 10);
 
             this.setState({
@@ -140,7 +144,7 @@ class App extends React.Component{
         });
     }
 
-
+    // 初始化音乐列表
     componentWillMount(){
         this.props.dispatch(getPlayList(list));
     }
@@ -149,11 +153,13 @@ class App extends React.Component{
 
         let ctx = this;
 
+        // 初始化音量大小
         ctx.setState({
             currentVolume: 100,
             volumeBarMaskWidth: ctx.refs.volumeBar.offsetWidth - 10 + "px"
         });
 
+        // 设置音乐进度和时间
         setInterval(() => {
 
             let progressBarMaskWidth = ctx.refs.musicPlayer.currentTime / ctx.state.maxProgress * (ctx.refs.progressBar.offsetWidth - 20);
@@ -282,6 +288,7 @@ function select(state){
     })
 }
 
+// 将秒数转成 xx:xx 格式
 function formatTime(time){
 
     let minute = parseInt(time / 60);
