@@ -12,7 +12,7 @@
 * 音乐文件可以是本地或者来自网络
 * 界面尽量做到简洁整齐不必和豆瓣界面一样
 
-![demo](http://ife-bos-2017.bj.bcebos.com/ife-bos-2017/1487843329988d735750f3dcc40fb7bd684b425ceb2b0.png)
+![demo](https://ooo.0o0.ooo/2017/03/19/58ce6ebf96d3f.png)
 
 ## 任务注意事项
 * 可以使用 Jquery 等类库开发

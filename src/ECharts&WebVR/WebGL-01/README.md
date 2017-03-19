@@ -19,4 +19,4 @@
     * 考虑如何用简单几何形状的组合，创造看起来更逼真的车；
     * 想一下，如果不用 Three.js，只使用 WebGL API 的话，实现这样的场景大概需要写哪些代码。
 
-![demo](http://gallery.echartsjs.com/asset/get/s/data-1487148645422-Sk6DIqbKg.png)
+![demo](https://ooo.0o0.ooo/2017/03/19/58ce6cfa97e15.png)
