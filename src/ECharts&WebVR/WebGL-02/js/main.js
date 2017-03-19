@@ -18,6 +18,7 @@
         // 给场景添加平行光，并设置颜色，光源位置和允许产生阴影
         var light = new THREE.DirectionalLight(0xffffff);
         light.position.set(-10,8,3);
+        light.castShadow = true;
         scene.add(light);
 
         // 创建环状体的材质
@@ -41,6 +42,9 @@
                 wheelMaterial
             );
 
+            // 这里设置环状体产生和接收阴影
+            wheel.castShadow = true;
+            wheel.reveiveShadow = true;
             wheel.rotation.y = 90*Math.PI/180;
 
             wheel.position.x = wheelPosArray[i].x;
@@ -49,14 +53,17 @@
             scene.add(wheel);
         }
 
-        // 创建正方体，并赋予兰伯特材质
+        // 创建正方体，并赋予Phong材质
         var carBody = new THREE.Mesh(
             new THREE.CubeGeometry(3,2,4),
-            new THREE.MeshLambertMaterial({
+            new THREE.MeshPhongMaterial({
                 color: 0x00DBCD
             })
         );
 
+        // 设置正方体产生和接收阴影
+        carBody.castShadow = true;
+        carBody.receiveShadow = true;
         carBody.position.y = 2;
         scene.add(carBody);
 
@@ -67,13 +74,48 @@
                 color: 0xcccccc
             })
         );
+        // 设置地面产生和接收阴影
+        floor.castShadow = true;
+        floor.receiveShadow  = true;
 
         floor.rotation.set(-90*Math.PI/180,0,0)
         floor.position.set(0,-0.55,0);
         scene.add(floor);
 
+        // 创建平面作为墙面，赋予兰伯特材质
+        var wall_1 = new THREE.Mesh(
+            new THREE.PlaneGeometry(30,30),
+            new THREE.MeshLambertMaterial({
+                color: 0xEEFF00
+            })
+        );
+        // 设置墙面产生和接收阴影
+        wall_1.castShadow = true;
+        wall_1.receiveShadow  = true;
+
+        wall_1.rotation.set(0*Math.PI/180,0,0)
+        wall_1.position.set(0,3,-5);
+        scene.add(wall_1);
+        
+        var wall_2 = new THREE.Mesh(
+            new THREE.PlaneGeometry(30,30),
+            new THREE.MeshLambertMaterial({
+                color: 0x05FF00
+            })
+        );
+        wall_2.castShadow = true;
+        wall_2.receiveShadow  = true;
+
+        wall_2.rotation.set(0,-90*Math.PI/180,0)
+        wall_2.position.set(5,3,0);
+        scene.add(wall_2);
+
         // 初始化渲染器
         renderer = new THREE.WebGLRenderer();
+
+        // 设置允许渲染阴影
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         
         // 设置渲染画面大小为窗口大小
         renderer.setSize(window.innerWidth, window.innerHeight);
