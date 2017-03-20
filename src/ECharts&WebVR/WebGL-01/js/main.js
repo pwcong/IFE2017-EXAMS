@@ -75,6 +75,7 @@
         // 初始化渲染器
         renderer = new THREE.WebGLRenderer();
         
+        renderer.setPixelRatio(window.devicePixelRatio);
         // 设置渲染画面大小为窗口大小
         renderer.setSize(window.innerWidth, window.innerHeight);
         // 生成canvas添加到body中

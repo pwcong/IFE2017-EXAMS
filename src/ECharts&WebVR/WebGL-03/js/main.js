@@ -89,6 +89,7 @@
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         
+        renderer.setPixelRatio(window.devicePixelRatio);
         // 设置渲染画面大小为窗口大小
         renderer.setSize(window.innerWidth, window.innerHeight);
         // 生成canvas添加到body中
