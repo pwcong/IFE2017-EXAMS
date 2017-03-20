@@ -1,5 +1,7 @@
 # 使用CSS实现折叠面板
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/mouse-suspension-blur/)
+
 ## 任务目的
 1. 深入理解html中radio的特性
 2. 深入理解CSS选择器以及伪元素的使用

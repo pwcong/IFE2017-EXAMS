@@ -1,5 +1,7 @@
 # WebGL No.2 - 光与影
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-02/)
+
 ## 任务目的
 
 在这一题中，你需要了解 Three.js 中不同类型的光源，并学会将它们添加到场景中。

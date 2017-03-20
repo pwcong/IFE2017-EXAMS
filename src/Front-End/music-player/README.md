@@ -1,5 +1,7 @@
 # 仿豆瓣音乐播放器
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/music-player/)
+
 ## 任务目的
 * 练习综合运用HTML、CSS、JavaScript实现功能
 * 熟悉 html5 audio 使用

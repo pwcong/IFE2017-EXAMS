@@ -1,5 +1,7 @@
 # WebGL No.3 - 材质与纹理
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-03/)
+
 ## 任务目的
 
 在这一题中，你将接触到如何为物体设置不同的材质，并且使用图片作为纹理。

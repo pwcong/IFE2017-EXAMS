@@ -1,5 +1,7 @@
 # 动态数据绑定（一）
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/dynamic-bind-data-1/)
+
 ## 任务目的
 
 1. 了解 getter 和 setter

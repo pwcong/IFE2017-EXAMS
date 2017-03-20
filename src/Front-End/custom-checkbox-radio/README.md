@@ -1,5 +1,7 @@
 # 自定义checkbox， radio样式
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/custom-checkbox-radio/)
+
 ## 任务目的
 1. 深入了解html label标签
 2. 了解CSS边框、背景、伪元素、伪类（注意和伪元素区分）等属性的设置

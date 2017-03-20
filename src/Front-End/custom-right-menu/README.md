@@ -1,5 +1,7 @@
 # 自定义网页右键菜单
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/custom-right-menu/)
+
 ## 任务目的
 1. 了解js中的oncontextmenu事件
 2. 了解如何获取鼠标位置

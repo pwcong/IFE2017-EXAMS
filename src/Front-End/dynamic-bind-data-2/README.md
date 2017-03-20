@@ -1,5 +1,7 @@
 # 动态数据绑定（二）
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/dynamic-bind-data-2/)
+
 ## 任务目的
 1. 在实践中使用递归思想
 2. 了解设计模式中的“发布-订阅模式”

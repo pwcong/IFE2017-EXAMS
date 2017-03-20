@@ -1,5 +1,7 @@
 # CSS3饼状loading效果
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css3-loading/)
+
 ## 任务目的
 1. 学习和掌握水平垂直居中布局
 2. 学习和掌握利用HTML和CSS构造简单规则图形

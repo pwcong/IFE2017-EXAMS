@@ -1,5 +1,7 @@
 # WebGL No.1 - Three.js 入门
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-01/)
+
 ## 任务目的
 
 在这一题中，你需要了解在网页中实现三维渲染的相关知识（涉及到 WebGL 和 Three.js 等），并且使用 Three.js 完成你的第一个作品。

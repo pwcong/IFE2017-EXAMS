@@ -1,5 +1,7 @@
 # 有趣的鼠标悬浮模糊效果
 
+[Demo预览](http://pwcong.me/IFE2017-EXAMS/src/Front-End/mouse-suspension-blur/)
+
 ## 任务目的
 
 * 针对设计稿样式进行合理的HTML架构，包括以下但不限于：
