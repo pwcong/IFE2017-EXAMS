@@ -9,6 +9,7 @@
 * ECharts & WebVR 学院
     * [WebGL No.1 - Three.js 入门](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-01)
     * [WebGL No.2 - 光与影](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-02)
+    * [WebGL No.3 - 材质与纹理](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-03)
 
 * 百度糯米前端技术学院
     * [有趣的鼠标悬浮模糊效果](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/mouse-suspension-blur)
