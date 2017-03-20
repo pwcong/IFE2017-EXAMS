@@ -1,7 +1,10 @@
 ;(function(window){
 
     var renderer, scene, camera;
-
+    
+    init();
+    autoRefresh();
+    
     function init(){
 
         // 创建透视摄像机，设置摄像机长宽比为窗口比例
@@ -11,7 +14,6 @@
 
         // 新建空场景
         scene = new THREE.Scene();
-
 
         // 给场景添加环境光
         scene.add(new THREE.AmbientLight(0x808080));
@@ -36,7 +38,6 @@
                 object.castShadow = true;
                 object.receiveShadow = true;
                 scene.add(object);
-                renderer.render(scene, camera);
             })
 
         });
@@ -110,7 +111,14 @@
 
     }
 
-    init();
+    function autoRefresh(){
+
+        requestAnimationFrame(autoRefresh);
+        renderer.render(scene, camera);
+
+    }
+
+    
 
 
 
