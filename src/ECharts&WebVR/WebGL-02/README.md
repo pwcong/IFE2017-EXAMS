@@ -1,4 +1,4 @@
-# WebGL No.1 - Three.js 入门
+# WebGL No.2 - 光与影
 
 ## 任务目的
 
