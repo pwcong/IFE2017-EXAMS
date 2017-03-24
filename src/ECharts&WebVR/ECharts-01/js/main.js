@@ -88,7 +88,7 @@
 
     $.post('http://route.showapi.com/9-9', {
         showapi_appid: '34260',
-        showapi_sign: '2eba05881fb44094b34acecec9e6b238-',
+        showapi_sign: '2eba05881fb44094b34acecec9e6b238',
         areaid: '101280601'
     }).done(function(data){
 
