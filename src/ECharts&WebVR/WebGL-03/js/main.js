@@ -9,23 +9,20 @@
 
         // 创建透视摄像机，设置摄像机长宽比为窗口比例
         camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 1, 5000);
-        camera.position.set(0,200,0);
+        camera.position.set(-300,50,600)
+        camera.lookAt(new THREE.Vector3(0, 1, 0));
 
         // 新建空场景
         scene = new THREE.Scene();
 
-        var light1 = new THREE.PointLight( 0xACFFAA, 0.7, 500 );
-        light1.position.set(200,50,-100);
-		scene.add( light1 );
+        // 给场景添加环境光
+        scene.add(new THREE.AmbientLight(0x808080));
 
-        var light2 = new THREE.PointLight( 0xF7FFBF, 0.8, 500 );
-        light2.position.set(0,150,200);
-		scene.add( light2 );
-
-
-        var light3 = new THREE.PointLight( 0xFFFFFF, 1, 500 );
-        light3.position.set(-200,150,-100);
-		scene.add( light3 );
+        // 给场景添加平行光，并设置颜色，光源位置和允许产生阴影
+        var light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(-200,300,100);
+        light.castShadow = true;
+        scene.add(light);
 
         // 加载 obj 模型和贴图
         var mtlLoader = new THREE.MTLLoader();
