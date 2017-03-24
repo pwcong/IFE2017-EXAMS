@@ -1,6 +1,6 @@
 ;(function(window){
 
-    var renderer, scene, camera;
+    var renderer, scene, camera, controls;
     
     init();
     autoRefresh();
@@ -14,75 +14,57 @@
         // 新建空场景
         scene = new THREE.Scene();
 
+        // 添加灯光
         var light1 = new THREE.PointLight( 0xACFFAA, 0.7, 500 );
         light1.position.set(200,50,-100);
+        light1.castShadow = true;
 		scene.add( light1 );
 
         var light2 = new THREE.PointLight( 0xF7FFBF, 0.8, 500 );
         light2.position.set(0,150,200);
+        light2.castShadow = true;
 		scene.add( light2 );
-
 
         var light3 = new THREE.PointLight( 0xFFFFFF, 1, 500 );
         light3.position.set(-200,150,-100);
+        light2.castShadow = true;
 		scene.add( light3 );
 
-        // 加载 obj 模型和贴图
-        var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('./obj/');
-        mtlLoader.load('car.mtl', function(materials){
-
-            materials.preload();
-
-            var objLoader = new THREE.OBJLoader();
-            objLoader.setMaterials(materials);
-            objLoader.setPath('./obj/');
-            objLoader.load('car.obj', function(object){
-                object.castShadow = true;
-                object.receiveShadow = true;
-                scene.add(object);
-            })
-
+        // 加载纹理贴图
+        new THREE.TextureLoader().load('./textures/map.jpg', function(map){
+            material.map = map;
+            material.needsUpdate = true;
         });
 
-        // 加载地面纹理贴图
-        var texture_floor = new THREE.TextureLoader().load('./textures/floor.jpg');
-        texture_floor.wrapS = THREE.RepeatWrapping;
-        texture_floor.wrapT = THREE.RepeatWrapping;
-        texture_floor.repeat.set( 25, 25 );
+        // 加载法线贴图
+        new THREE.TextureLoader().load('./textures/normal.jpg', function(normal){
+            material.normalMap = normal;
+            material.needsUpdate = true;
+        });
+
+        var ball = new THREE.Mesh(
+            new THREE.SphereGeometry(18,30,30),
+            material
+        );
+
+        ball.position.y = 50;
+        scene.add(ball);
+
+
 
         // 创建平面作为地面，赋予兰伯特材质
         var floor = new THREE.Mesh(
-            new THREE.PlaneGeometry(5000,5000),
-            new THREE.MeshLambertMaterial({
-                map: texture_floor
+            new THREE.PlaneGeometry(2000,2000),
+            new THREE.MeshStandardMaterial({
+                color: 0xf5f5f5
             })
         );
-        // 设置地面产生和接收阴影
-        floor.castShadow = true;
+        // 设置地面接收阴影
         floor.receiveShadow  = true;
 
         floor.rotation.set(-90*Math.PI/180,0,0)
-        floor.position.set(0,-114,0);
+        floor.position.set(0,0,0);
         scene.add(floor);
-
-        // 加载背景纹理贴图
-        var texture_bg = new THREE.TextureLoader().load('./textures/bg.jpg');
-
-        // 创建平面作为地面，赋予兰伯特材质
-        var bg = new THREE.Mesh(
-            new THREE.PlaneGeometry(4000,1200),
-            new THREE.MeshLambertMaterial({
-                map: texture_bg
-            })
-        );
-        // 设置地面产生和接收阴影
-        bg.castShadow = true;
-        bg.receiveShadow  = true;
-
-        bg.rotation.set(0,-25*Math.PI/180,0)
-        bg.position.set(200,420,-1000);
-        scene.add(bg);
 
 
         // 初始化渲染器
@@ -98,8 +80,9 @@
         // 生成canvas添加到body中
         document.body.appendChild(renderer.domElement);
 
-        // 开始渲染
-        renderer.render(scene, camera);
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.target.set(0,0,0);
+        controls.update();
 
         // 添加窗口大小改变监听，使摄像机长宽比、渲染画面大小和窗口一致
         window.addEventListener('resize', onWindowResize, false);
