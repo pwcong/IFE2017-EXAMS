@@ -30,6 +30,8 @@
         light2.castShadow = true;
 		scene.add( light3 );
 
+        var material = new THREE.MeshStandardMaterial();
+
         // 加载纹理贴图
         new THREE.TextureLoader().load('./textures/map.jpg', function(map){
             material.map = map;
