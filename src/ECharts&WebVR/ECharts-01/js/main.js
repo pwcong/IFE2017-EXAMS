@@ -96,7 +96,7 @@
             weatherChart.setOption(initOption(handleData(data)));
         else{
             $.get('./data.json').done(function(data){
-                weatherChart.setOption(initOption(handleData(JSON.parse(data))));
+                weatherChart.setOption(initOption(handleData(data)));
             });
         }
 
