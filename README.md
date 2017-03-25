@@ -12,6 +12,7 @@
     * [WebGL No.3 - 材质与纹理](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-03) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-03/)]
     * [WebGL No.4 - 照相机和交互控制](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-04) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-04/)]
     * [ECharts No.1 - 零基础绘制ECharts图表](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-01) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-01/)]
+    * [ECharts No.2 - 实现自定义的统计图表](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-02) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-02/)]
     
 
 * 百度糯米前端技术学院

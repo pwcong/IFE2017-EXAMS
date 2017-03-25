@@ -7,11 +7,14 @@
 
         return ({
             title: {
-                text: '深圳 - 未来 7 天气温变化'
-            },
-            tooltip: {},
-            legend: {
-                data: ['白天', '夜间', '平均']
+                text: '深圳 - 未来7天气温变化',
+                textStyle: {
+                    color: '#666'
+                },
+                subtext: '冷暖自知',
+                subtextStyle: {
+                    fontSize: 14
+                }
             },
             toolbox: {
                 feature: {
@@ -21,13 +24,27 @@
                     saveAsImage: {show: true}
                 }
             },
+            grid: {
+                left: '0%',
+                top: '24%',
+                containLabel: true
+            },
+            tooltip: {},
+            legend: {
+                left: 'left',
+                top: 64,
+                data: ['白天', '夜间']
+            },
             xAxis: {
-                data: data.days
+                data: data.days,
+                
             },
             yAxis: [
+                
                 {
+                    inverse: true,
+                    position: 'right',
                     type: 'value',
-                    name: '温度',
                     axisLabel: {
                         formatter: '{value} °C'
                     }
@@ -43,12 +60,10 @@
                     name: '夜间',
                     type: 'bar',
                     data: data.nightData
-                },
-                {
-                    name: '平均',
-                    type: 'line',
-                    data: data.aveData
                 }
+            ],
+            color: [
+                '#00E8CA', '#007062'
             ]
 
         });
@@ -57,7 +72,7 @@
 
     function handleData(data){
 
-        let days = [], dayData = [], nightData = [], aveData = [];
+        let days = [], dayData = [], nightData = [];
 
         let weathers = data.showapi_res_body.dayList;
 
@@ -66,20 +81,17 @@
             let daytime = weathers[i].daytime;
             let dayTem = weathers[i].day_air_temperature;
             let nightTem = weathers[i].night_air_temperature;
-            let aveTem = (parseInt(dayTem) + parseInt(nightTem)) / 2;
 
             days.push(daytime.substring(6, 8) + '日');
             dayData.push(dayTem);
             nightData.push(nightTem);
-            aveData.push(aveTem);
 
         }
 
         return ({
             days,
             dayData, 
-            nightData,
-            aveData
+            nightData
         });
 
 
@@ -101,5 +113,6 @@
         }
 
     });
+
 
 })(window);
