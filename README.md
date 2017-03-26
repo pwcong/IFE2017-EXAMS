@@ -14,6 +14,7 @@
     * [ECharts No.1 - 零基础绘制ECharts图表](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-01) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-01/)]
     * [ECharts No.2 - 实现自定义的统计图表](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-02) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-02/)]
     * [ECharts No.3 - 绘制地图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-03) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-03/)]
+    * [ECharts No.4 - 可视化前的数据预处理](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-04) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-04/)]
     
 
 * 百度糯米前端技术学院
