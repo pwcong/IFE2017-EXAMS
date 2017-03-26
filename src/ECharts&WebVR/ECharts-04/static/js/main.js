@@ -161,7 +161,7 @@
                 {
                     type: 'inside',
                     xAxisIndex: [0, 1],
-                    start: 98,
+                    start: 70,
                     end: 100
                 },
                 {
