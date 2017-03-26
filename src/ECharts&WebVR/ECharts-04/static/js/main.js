@@ -44,7 +44,7 @@
                 text: '上证指数 - 2016 年',
                 left: 0
             },
-            backgroundColor: '#21202D',
+            backgroundColor: '#eee',
             animation: false,
             legend: {
                 bottom: 10,
