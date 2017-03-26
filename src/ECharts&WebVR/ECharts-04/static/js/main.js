@@ -40,7 +40,11 @@
         let tickerChart = echarts.init(document.getElementById('chart-ticker'));
 
         tickerChart.setOption(option = {
-            backgroundColor: '#eee',
+            title: {
+                text: '上证指数 - 2016 年',
+                left: 0
+            },
+            backgroundColor: '#21202D',
             animation: false,
             legend: {
                 bottom: 10,
@@ -168,7 +172,7 @@
                     xAxisIndex: [0, 1],
                     type: 'slider',
                     top: '85%',
-                    start: 98,
+                    start: 70,
                     end: 100
                 }
             ],
