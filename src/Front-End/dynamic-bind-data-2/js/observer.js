@@ -28,12 +28,21 @@ Observer.prototype.convert = function (key, val) {
         enumerable: true,
         configurable: true,
         get: function () {
+            console.log('你访问了', key);
             return val;
         },
         set: function (newVal) {
             if (newVal === val) return;
+
+            console.log('你设置了', key, '，新的值为', newVal);
+            
             ctx.watch[key] && ctx.watch[key](newVal);
             val = newVal;
+
+            // 如果判断为对象，再次观察
+            if (typeof val === 'object') {
+                new Observer(val, ctx);
+            }
         }
     })
 };
