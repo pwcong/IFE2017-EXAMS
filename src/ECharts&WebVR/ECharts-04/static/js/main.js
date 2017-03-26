@@ -41,14 +41,11 @@
 
         tickerChart.setOption(option = {
             title: {
-                text: '上证指数 - 2016 年',
-                left: 0
+                text: '上证指数 - 2016 年'
             },
             backgroundColor: '#eee',
             animation: false,
             legend: {
-                bottom: 10,
-                left: 'center',
                 data: ['Dow-Jones index', 'MA5', 'MA10', 'MA20', 'MA30']
             },
             tooltip: {
