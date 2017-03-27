@@ -1,0 +1,11 @@
+{
+  "name": "echarts-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "node ./src/index.js"
+  },
+  "author": "Pwcong <pwcong@foxmail.com>",
+  "license": "ISC"
+}

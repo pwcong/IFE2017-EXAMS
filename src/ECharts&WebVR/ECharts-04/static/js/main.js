@@ -8,7 +8,7 @@
         for (var i = 0; i < rawData.length; i++) {
             categoryData.push(rawData[i].splice(0, 1)[0]);
             values.push(rawData[i]);
-            volumns.push(rawData[i][5]);
+            volumns.push(rawData[i][4]);
         }
         return {
             categoryData: categoryData,
