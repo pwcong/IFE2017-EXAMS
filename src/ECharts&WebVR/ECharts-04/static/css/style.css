@@ -1,6 +1,6 @@
 body{
     font-family: 'Microsoft YaHei', sans-serif;
-
+    margin: 0px;
 }
 
 .container{
@@ -10,6 +10,41 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.left{
+
+    height: 100%;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right{
+    height: 100%;
+    width: 200px;
+    overflow: auto;
+    background-color: #333;
+}
+
+.right div{
+    padding: 8px 8px 8px 16px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.right div:hover{
+    background-color: orange;
+}
+
+.right div:active{
+    background-color: darkorange;
 }
 
 .chart{

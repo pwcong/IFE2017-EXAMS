@@ -33,20 +33,17 @@
         return result;
     }
 
-    $.get('./static/file/000001.json', function (rawData) {
+    function initOption(title, data){
 
-        var data = splitData(rawData);
+        return ({
 
-        let tickerChart = echarts.init(document.getElementById('chart-ticker'));
-
-        tickerChart.setOption(option = {
             title: {
-                text: '上证指数 - 2016 年'
+                text: title
             },
             backgroundColor: '#eee',
             animation: false,
             legend: {
-                data: ['Dow-Jones index', 'MA5', 'MA10', 'MA20', 'MA30']
+                data: [title + ' Index', 'MA5', 'MA10', 'MA20', 'MA30']
             },
             tooltip: {
                 trigger: 'axis',
@@ -175,7 +172,7 @@
             ],
             series: [
                 {
-                    name: 'Dow-Jones index',
+                    name: title + ' Index',
                     type: 'candlestick',
                     data: data.values,
                     itemStyle: {
@@ -231,18 +228,38 @@
                     data: data.volumns
                 }
             ]
-        }, true);
-
-        tickerChart.dispatchAction({
-            type: 'brush',
-            areas: [
-                {
-                    brushType: 'lineX',
-                    coordRange: ['2016-06-02', '2016-06-20'],
-                    xAxisIndex: 0
-                }
-            ]
         });
+
+        
+    }
+
+    let tickerList = document.getElementById('list-ticker');
+
+    let tickerChart = echarts.init(document.getElementById('chart-ticker'));
+
+    $.get('./static/file/categories.json', function(categories){
+
+        for(let i = 0; i < categories.length; i++){
+
+            let div = document.createElement('div');
+            div.innerHTML = categories[i].category;
+
+            div.onclick = function(){
+
+                $.get(categories[i].path, function (rawData) {
+                    tickerChart.setOption(option = initOption(categories[i].category, splitData(rawData)), true);
+                });
+            }
+
+            tickerList.appendChild(div);
+
+        }
+
+    });
+    
+    $.get('./static/file/ticker/A.json', function (rawData) {
+
+        tickerChart.setOption(option = initOption('A', splitData(rawData)), true);
     });
 
 
