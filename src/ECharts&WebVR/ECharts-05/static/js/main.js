@@ -6,8 +6,8 @@
         var values = [];
         var volumns = [];
         for (var i = 0; i < rawData.length; i++) {
-            categoryData.push(rawData[i].splice(0, 1)[0]);
-            values.push(rawData[i]);
+            categoryData.push(rawData[i][0]);
+            values.push([rawData[i][1],rawData[i][2],rawData[i][3],rawData[i][4],rawData[i][5]]);
             volumns.push(rawData[i][5]);
         }
         return {
@@ -154,20 +154,111 @@
                     splitLine: {show: false}
                 }
             ],
-            dataZoom: [
+            series: [
                 {
-                    type: 'inside',
-                    xAxisIndex: [0, 1],
-                    start: 70,
-                    end: 100
+                    name: title + ' Index',
+                    type: 'candlestick',
+                    data: data.values,
+                    itemStyle: {
+                        normal: {
+                            borderColor: null,
+                            borderColor0: null
+                        }
+                    },
+                    tooltip: {
+                    }
                 },
                 {
-                    show: true,
-                    xAxisIndex: [0, 1],
-                    type: 'slider',
-                    top: '85%',
-                    start: 70,
-                    end: 100
+                    name: 'MA5',
+                    type: 'line',
+                    data: calculateMA(5, data),
+                    smooth: true,
+                    lineStyle: {
+                        normal: {opacity: 0.5}
+                    }
+                },
+                {
+                    name: 'MA10',
+                    type: 'line',
+                    data: calculateMA(10, data),
+                    smooth: true,
+                    lineStyle: {
+                        normal: {opacity: 0.5}
+                    }
+                },
+                {
+                    name: 'MA20',
+                    type: 'line',
+                    data: calculateMA(20, data),
+                    smooth: true,
+                    lineStyle: {
+                        normal: {opacity: 0.5}
+                    }
+                },
+                {
+                    name: 'MA30',
+                    type: 'line',
+                    data: calculateMA(30, data),
+                    smooth: true,
+                    lineStyle: {
+                        normal: {opacity: 0.5}
+                    }
+                },
+                {
+                    name: 'Volumn',
+                    type: 'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data: data.volumns
+                }
+            ]
+        });
+        
+    }
+
+    function updateOption(title, data){
+
+        return ({
+            xAxis: [
+                {
+                    type: 'category',
+                    data: data.categoryData,
+                    scale: true,
+                    boundaryGap : false,
+                    axisLine: {onZero: false},
+                    splitLine: {show: false},
+                    splitNumber: 20,
+                    min: 'dataMin',
+                    max: 'dataMax',
+                    axisPointer: {
+                        z: 100
+                    }
+                },
+                {
+                    type: 'category',
+                    gridIndex: 1,
+                    data: data.categoryData,
+                    scale: true,
+                    boundaryGap : false,
+                    axisLine: {onZero: false},
+                    axisTick: {show: false},
+                    splitLine: {show: false},
+                    axisLabel: {show: false},
+                    splitNumber: 20,
+                    min: 'dataMin',
+                    max: 'dataMax',
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                var seriesValue = (params.seriesData[0] || {}).value;
+                                return params.value
+                                + (seriesValue != null
+                                    ? '\n' + echarts.format.addCommas(seriesValue)
+                                    : ''
+                                );
+                            }
+                        }
+                    }
                 }
             ],
             series: [
@@ -230,12 +321,14 @@
             ]
         });
 
-        
     }
 
     let tickerList = document.getElementById('list-ticker');
 
     let tickerChart = echarts.init(document.getElementById('chart-ticker'));
+
+    let timer;
+    let length = 30;
 
     $.get('./static/file/categories.json', function(categories){
 
@@ -247,7 +340,32 @@
             div.onclick = function(){
 
                 $.get(categories[i].path, function (rawData) {
-                    tickerChart.setOption(option = initOption(categories[i].category, splitData(rawData)), true);
+                    
+                    if(timer)
+                        clearInterval(timer);
+                    
+                    let sourceData = rawData;
+                    let displayData = [];
+
+                    let l = rawData.length > length ? length : rawData.length;
+
+                    for(let i = 0; i < l; i++)
+                        displayData.push(sourceData.shift());
+
+                    timer = setInterval(function(){
+
+                        let t = sourceData.shift();
+                        if(t){
+                            displayData.push(t)
+                            displayData.shift();
+                            tickerChart.setOption(updateOption(categories[i].category, splitData(displayData)));
+                        }else{
+                            clearInterval(timer);
+                        }
+                        
+                    },200);
+
+                    tickerChart.setOption(option = initOption(categories[i].category, splitData(displayData)), true);
                 });
             }
 
@@ -259,7 +377,32 @@
     
     $.get('./static/file/ticker/A.json', function (rawData) {
 
-        tickerChart.setOption(option = initOption('A', splitData(rawData)), true);
+        if(timer)
+            clearInterval(timer);
+        
+        let sourceData = rawData;
+        let displayData = [];
+
+        let l = rawData.length > length ? length : rawData.length;
+
+        for(let i = 0; i < l; i++)
+            displayData.push(sourceData.shift());
+
+        timer = setInterval(function(){
+
+            let t = sourceData.shift();
+            if(t){
+                displayData.push(t)
+                displayData.shift();
+                tickerChart.setOption(updateOption('A', splitData(displayData)));
+            }else{
+                clearInterval(timer);
+            }
+            
+        },200);
+
+        tickerChart.setOption(option = initOption('A', splitData(displayData)), true);
+
     });
 
 
