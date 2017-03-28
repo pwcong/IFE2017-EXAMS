@@ -33,7 +33,7 @@
         return result;
     }
 
-    function initOption(title, data){
+    function initOption(title, startValue, endValue, data){
 
         return ({
 
@@ -154,111 +154,14 @@
                     splitLine: {show: false}
                 }
             ],
-            series: [
+            dataZoom: [
                 {
-                    name: title + ' Index',
-                    type: 'candlestick',
-                    data: data.values,
-                    itemStyle: {
-                        normal: {
-                            borderColor: null,
-                            borderColor0: null
-                        }
-                    },
-                    tooltip: {
-                    }
-                },
-                {
-                    name: 'MA5',
-                    type: 'line',
-                    data: calculateMA(5, data),
-                    smooth: true,
-                    lineStyle: {
-                        normal: {opacity: 0.5}
-                    }
-                },
-                {
-                    name: 'MA10',
-                    type: 'line',
-                    data: calculateMA(10, data),
-                    smooth: true,
-                    lineStyle: {
-                        normal: {opacity: 0.5}
-                    }
-                },
-                {
-                    name: 'MA20',
-                    type: 'line',
-                    data: calculateMA(20, data),
-                    smooth: true,
-                    lineStyle: {
-                        normal: {opacity: 0.5}
-                    }
-                },
-                {
-                    name: 'MA30',
-                    type: 'line',
-                    data: calculateMA(30, data),
-                    smooth: true,
-                    lineStyle: {
-                        normal: {opacity: 0.5}
-                    }
-                },
-                {
-                    name: 'Volumn',
-                    type: 'bar',
-                    xAxisIndex: 1,
-                    yAxisIndex: 1,
-                    data: data.volumns
-                }
-            ]
-        });
-        
-    }
-
-    function updateOption(title, data){
-
-        return ({
-            xAxis: [
-                {
-                    type: 'category',
-                    data: data.categoryData,
-                    scale: true,
-                    boundaryGap : false,
-                    axisLine: {onZero: false},
-                    splitLine: {show: false},
-                    splitNumber: 20,
-                    min: 'dataMin',
-                    max: 'dataMax',
-                    axisPointer: {
-                        z: 100
-                    }
-                },
-                {
-                    type: 'category',
-                    gridIndex: 1,
-                    data: data.categoryData,
-                    scale: true,
-                    boundaryGap : false,
-                    axisLine: {onZero: false},
-                    axisTick: {show: false},
-                    splitLine: {show: false},
-                    axisLabel: {show: false},
-                    splitNumber: 20,
-                    min: 'dataMin',
-                    max: 'dataMax',
-                    axisPointer: {
-                        label: {
-                            formatter: function (params) {
-                                var seriesValue = (params.seriesData[0] || {}).value;
-                                return params.value
-                                + (seriesValue != null
-                                    ? '\n' + echarts.format.addCommas(seriesValue)
-                                    : ''
-                                );
-                            }
-                        }
-                    }
+                    show: false,
+                    xAxisIndex: [0, 1],
+                    type: 'slider',
+                    top: '85%',
+                    startValue: startValue,
+                    endValue: endValue
                 }
             ],
             series: [
@@ -320,6 +223,23 @@
                 }
             ]
         });
+        
+    }
+
+    function updateOption(startValue, endValue){
+
+        return ({
+            dataZoom: [
+                {
+                    show: false,
+                    xAxisIndex: [0, 1],
+                    type: 'slider',
+                    top: '85%',
+                    startValue: startValue,
+                    endValue: endValue
+                }
+            ]
+        });
 
     }
 
@@ -343,29 +263,24 @@
                     
                     if(timer)
                         clearInterval(timer);
-                    
-                    let sourceData = rawData;
-                    let displayData = [];
 
-                    let l = rawData.length > length ? length : rawData.length;
-
-                    for(let i = 0; i < l; i++)
-                        displayData.push(sourceData.shift());
+                    let startValue = 0;
 
                     timer = setInterval(function(){
 
-                        let t = sourceData.shift();
-                        if(t){
-                            displayData.push(t)
-                            displayData.shift();
-                            tickerChart.setOption(updateOption(categories[i].category, splitData(displayData)));
+                        if(startValue + 1 + length < rawData.length ){
+
+                            startValue++;
+
+                            tickerChart.setOption(updateOption(startValue, startValue + length));
+                        
                         }else{
                             clearInterval(timer);
                         }
                         
                     },200);
 
-                    tickerChart.setOption(option = initOption(categories[i].category, splitData(displayData)), true);
+                    tickerChart.setOption(option = initOption(categories[i].category, startValue, startValue + length, splitData(rawData)), true);
                 });
             }
 
@@ -379,29 +294,24 @@
 
         if(timer)
             clearInterval(timer);
-        
-        let sourceData = rawData;
-        let displayData = [];
 
-        let l = rawData.length > length ? length : rawData.length;
-
-        for(let i = 0; i < l; i++)
-            displayData.push(sourceData.shift());
+        let startValue = 0;
 
         timer = setInterval(function(){
 
-            let t = sourceData.shift();
-            if(t){
-                displayData.push(t)
-                displayData.shift();
-                tickerChart.setOption(updateOption('A', splitData(displayData)));
+            if(startValue + 1 + length < rawData.length ){
+
+                startValue++;
+
+                tickerChart.setOption(updateOption(startValue, startValue + length));
+            
             }else{
                 clearInterval(timer);
             }
             
         },200);
 
-        tickerChart.setOption(option = initOption('A', splitData(displayData)), true);
+        tickerChart.setOption(option = initOption('A', startValue, startValue + length, splitData(rawData)), true);
 
     });
 
