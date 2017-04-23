@@ -30,6 +30,7 @@
     * [正则表达式之简易markdown文件解析器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/markdown-parser) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/markdown-parser/)]
     * [CSS3饼状loading效果](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/css3-loading) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css3-loading/)]
     * [仿豆瓣音乐播放器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/music-player) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/music-player/)]
+    * [CSS3实现3D轮播图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/css3-3d-gallery) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css3-3d-gallery/)]
 
 # 成员
 

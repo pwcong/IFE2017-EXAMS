@@ -1,0 +1,25 @@
+.stage {
+    width: 100%;
+    perspective: 1600px;
+    transition: top .5s;
+    position: relative;
+}
+
+.container {
+    width: 384px;
+    height: 300px;
+    margin-left: -192px;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 50%;
+}
+
+.pic {
+    width: 384px;
+    transition: opacity 1s, transform 1s;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 1px 5px 0px;
+}
