@@ -1,0 +1,101 @@
+body{
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.container{
+    background-color: #666;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border{
+    width: 294px;
+    height: 600px;
+    min-width: 294px;
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../imgs/iphone6.png);
+    box-sizing: border-box;
+    padding: 72px 18px 74px 18px;
+}
+
+
+.content{
+    overflow: auto;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    background-color: white;
+}
+
+.content::-webkit-scrollbar{
+    width: 4px;
+}
+
+.content::-webkit-scrollbar-track{
+    background-color: #aaa;
+}
+
+.content::-webkit-scrollbar-thumb{
+    background-color: #555;
+}
+
+.loading{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.loading img{
+    width: 48px;
+    height: 48px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate{
+
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(365deg);
+    }
+
+}
+
+
+.item{
+    margin-top: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 8px 4px 8px;
+    background-color: white;
+
+    box-shadow: 0px 0px 0px 0px;
+
+    transition: box-shadow 0.3s;
+
+}
+
+.item:hover{
+
+    box-shadow: 0px 0px 5px 0px;
+
+
+}
+
