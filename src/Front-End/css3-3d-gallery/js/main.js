@@ -12,7 +12,7 @@
     }
 
     var picContent = '',
-        picArray = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        picArray = [1, 2, 3, 4, 5, 6],
         rotate = 360 / picArray.length;
 
     picArray.forEach(function (i) {
