@@ -34,7 +34,7 @@
                     isLoading = true;
 
                     // 执行用户自定义加载动作，并传入finish函数供用户调用取消加载状态
-                    onLoad(finish)
+                    onLoad(finish);
                 }
 
             }
