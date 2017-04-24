@@ -11,6 +11,16 @@
     * [UI组件之色彩选择器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ui-color-picker)
     * [标签云](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/cloud-label)
     * [巨型画布](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/large-canvas)
+    * [自动抠图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/picture-auto-clip)
+    * [贪吃蛇](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/hungry-snack)
+    * [UI组件之图片裁剪器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ui-picture-clipper)
+    * [算式计算器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/calculator)
+    * [分层画布](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/layered-canvas)
+    * [自动循环播放的广告条](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/auto-loop-banner)
+    * [采集窗体点击对象的页面所在view层级及对象属性](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/pick-obj-viewlayer-property)
+    * [iOS美颜相机App](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ios-face-beauty-app)
+    * [模拟iOS系统UITableView控件](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ios-ui-table-view)
+    * [简易增强现实浏览器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/simple-ar-browser)
 
 * ECharts & WebVR 学院
     * [WebGL No.1 - Three.js 入门](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-01) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-01/)]
