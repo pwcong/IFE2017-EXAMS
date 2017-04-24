@@ -47,6 +47,7 @@
     * [ECharts No.6 - 绘制人物关系图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-06)
     * [ECharts No.7 - 空气质量可视化](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-07)
     * [【综合】绘制三维地图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/3D-Map)
+    * [【综合】三维地球](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/3D-Earth)
     
 
 * 百度糯米前端技术学院
