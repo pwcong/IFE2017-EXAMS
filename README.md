@@ -21,6 +21,12 @@
     * [iOS美颜相机App](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ios-face-beauty-app)
     * [模拟iOS系统UITableView控件](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ios-ui-table-view)
     * [简易增强现实浏览器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/simple-ar-browser)
+    * [实现一个页面转场动画](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/page-transfer-animation)
+    * [模拟时钟](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/clock)
+    * [生成二维码](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/qr-code-generator)
+    * [虚拟画笔](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/virtual-paint)
+    * [推箱子](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/sokoban)
+    * [全国空气质量地图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/air-quality-map)
 
 * ECharts & WebVR 学院
     * [WebGL No.1 - Three.js 入门](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-01) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-01/)]
