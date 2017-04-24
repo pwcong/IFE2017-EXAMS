@@ -55,6 +55,8 @@
     * [动态数据绑定（一）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dynamic-bind-data-1) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/dynamic-bind-data-1/)]
     * [动态数据绑定（二）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dynamic-bind-data-2) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/dynamic-bind-data-2/)]
     * [动态数据绑定（三）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dynamic-bind-data-3) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/dynamic-bind-data-3/)]
+    * [动态数据绑定（四）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dynamic-bind-data-4)
+    * [动态数据绑定（五）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dynamic-bind-data-5)
     * [自定义checkbox， radio样式](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/custom-checkbox-radio) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/custom-checkbox-radio/)]
     * [自定义网页右键菜单](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/custom-right-menu) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/custom-right-menu/)]
     * [使用CSS实现折叠面板](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/css-collapse-panel) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css-collapse-panel/)]
@@ -62,6 +64,15 @@
     * [CSS3饼状loading效果](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/css3-loading) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css3-loading/)]
     * [仿豆瓣音乐播放器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/music-player) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/music-player/)]
     * [CSS3实现3D轮播图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/css3-3d-gallery) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Front-End/css3-3d-gallery/)]
+    * [正则表达式之入门](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/regexp-demo)
+    * [实现树形组件](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/tree-component)
+    * [封装DOM动画类库（一）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dom-animation-lib-01)
+    * [封装DOM动画类库（二）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/dom-animation-lib-02)
+    * [网页抓取分析服务系列之一（基础分析）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/webpage-analyse-01)
+    * [网页抓取分析服务系列之二（设备模拟）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/webpage-analyse-02)
+    * [网页抓取分析服务系列之三（服务封装）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/webpage-analyse-03)
+    * [网页抓取分析服务系列之四（数据交互）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/webpage-analyse-04)
+    * [网页抓取分析服务系列之五（并发控制）](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Front-End/webpage-analyse-05)
 
 # 成员
 
