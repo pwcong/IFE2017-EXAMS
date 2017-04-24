@@ -8,6 +8,9 @@
 
 * 商业学院
     * [无限滚动效果](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/infinite-scroll) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/Business/infinite-scroll/)]
+    * [UI组件之色彩选择器](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/ui-color-picker)
+    * [标签云](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/cloud-label)
+    * [巨型画布](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/Business/large-canvas)
 
 * ECharts & WebVR 学院
     * [WebGL No.1 - Three.js 入门](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/WebGL-01) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/WebGL-01/)]
