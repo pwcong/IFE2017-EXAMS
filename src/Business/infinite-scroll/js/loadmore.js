@@ -31,6 +31,11 @@
                 // 若处于非loading状态之时调用
                 if(!isLoading){
                     container.appendChild(loadingElement);
+
+                    // 使容器滑至底部
+                    container.scrollTop = container.scrollHeight-container.offsetHeight;
+                    
+                    // 标记为loading状态
                     isLoading = true;
 
                     // 执行用户自定义加载动作，并传入finish函数供用户调用取消加载状态
