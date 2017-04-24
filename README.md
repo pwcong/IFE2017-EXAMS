@@ -44,6 +44,9 @@
     * [ECharts No.3 - 绘制地图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-03) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-03/)]
     * [ECharts No.4 - 可视化前的数据预处理](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-04) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-04/)]
     * [ECharts No.5 - 动态数据](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-05) [[Demo](http://pwcong.me/IFE2017-EXAMS/src/ECharts&WebVR/ECharts-05/)]
+    * [ECharts No.6 - 绘制人物关系图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-06)
+    * [ECharts No.7 - 空气质量可视化](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/ECharts-07)
+    * [【综合】绘制三维地图](https://github.com/pwcong/IFE2017-EXAMS/tree/master/src/ECharts%26WebVR/3D-Map)
     
 
 * 百度糯米前端技术学院
